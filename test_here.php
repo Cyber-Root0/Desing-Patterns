@@ -6,6 +6,7 @@ use Desing\Pattern\factoryMethod\creator\Pix;
 use Desing\Pattern\builder\CarBuilder;
 use Desing\Pattern\builder\Car;
 use Desing\Pattern\prototype\Customer;
+use Desing\Pattern\singleton\DB;
 //Proxy Pattern
 echo "------ Proxy Pattern ------------ \n";
 $proxy = new ProxyPattern(new SimpleClass("Bruno Venancio Alves"));
@@ -33,7 +34,10 @@ $customer2 = clone $customer1;
 if ($customer1->getName() === $customer2->getName()){
     echo "\nSuccesfully cloned object";
 }else{
-    echo "Faild clone";
+    echo "Failed clone\n";
 }
 
+/* Singleton Pattern */
+$db = DB::getInstance();
+$db->query();
 
