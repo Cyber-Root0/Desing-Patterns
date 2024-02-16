@@ -19,13 +19,11 @@ var_dump($pix->create([], [], 1));
 
 //Builder Tests
 
-$car = new Car(
-    (new CarBuilder)
-    ->setName('Volkswagen Gol Comfortline')
-    ->setModel('Gol')
-    ->setYear(new \DateTime())
-    ->setBrand('VOLKSWAGEN')
-);
+$car = (new CarBuilder())
+    ->setBrand("VolksWagen")
+    ->setModel("Uno")
+    ->setName("Uno 4 portas")
+    ->setYear(new DateTime())->build();
 echo $car->getName();
 
 /* Protoype Pattern  */

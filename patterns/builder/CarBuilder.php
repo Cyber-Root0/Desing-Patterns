@@ -2,10 +2,14 @@
 namespace Desing\Pattern\builder;
 class CarBuilder{
 
-    public string $model;
-    public string $name;
-    public \DateTime $year;
-    public string $brand;    
+    private string $model;
+    private string $name;
+    private \DateTime $year;
+    private string $brand;
+    private Car $object;
+    public function __construct(){
+        $this->object = new Car();
+    }
     /**
      * set Model name
      *
@@ -13,7 +17,7 @@ class CarBuilder{
      * @return self
      */
     public function setModel(string $model){
-        $this->model = $model;
+        $this->object->setModel($model);
         return $this;
     }    
     /**
@@ -23,7 +27,7 @@ class CarBuilder{
      * @return self
      */
     public function setName(string $name){
-        $this->name = $name;
+        $this->object->setName($name);
         return $this;
     }    
     /**
@@ -33,7 +37,7 @@ class CarBuilder{
      * @return self
      */
     public function setYear(\DateTime $year){
-        $this->year = $year;
+        $this->object->setYear($year);
         return $this;
     }    
     /**
@@ -43,7 +47,10 @@ class CarBuilder{
      * @return self
      */
     public function setBrand(string $brand){
-        $this->brand = $brand;
+        $this->object->setBrand($brand);
         return $this;
+    }
+    public function build(){
+        return $this->object;
     }
 }

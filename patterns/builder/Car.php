@@ -12,17 +12,48 @@ class Car{
      * @param  CarBuilder $carBuilder
      * @return void
      */
-    public function __construct(CarBuilder $carBuilder){
-        $this->model = $carBuilder->model;
-        $this->brand = $carBuilder->brand;
-        $this->name = $carBuilder->name;
-        $this->year = $carBuilder->year;
+    public function __construct(){
+    }    
+   /**
+     * set Model name
+     *
+     * @param  string $model
+     * @return self
+     */
+    public function setModel(string $model){
+        $this->model = $model;
+        return $this;
     }    
     /**
-     * get Car Name
+     * set Car Name
      *
-     * @return string
+     * @param  string $name
+     * @return self
      */
+    public function setName(string $name){
+        $this->name = $name;
+        return $this;
+    }    
+    /**
+     * set model year
+     *
+     * @param  \DateTime $year
+     * @return self
+     */
+    public function setYear(\DateTime $year){
+        $this->year = $year;
+        return $this;
+    }    
+    /**
+     * set Brand name
+     *
+     * @param  string $brand
+     * @return self
+     */
+    public function setBrand(string $brand){
+        $this->brand = $brand;
+        return $this;
+    }
     public function getName(){
         return $this->name;
     }
